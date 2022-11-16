@@ -1,0 +1,11 @@
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\bin\Debug\2115101061_YasarCan.exe.config
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\bin\Debug\2115101061_YasarCan.exe
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\bin\Debug\2115101061_YasarCan.pdb
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\obj\Debug\2115101061_YasarCan.csproj.AssemblyReference.cache
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\obj\Debug\2115101061_YasarCan.csproj.SuggestedBindingRedirects.cache
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\obj\Debug\_2115101061_YasarCan.Form1.resources
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\obj\Debug\_2115101061_YasarCan.Properties.Resources.resources
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\obj\Debug\2115101061_YasarCan.csproj.GenerateResource.cache
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\obj\Debug\2115101061_YasarCan.csproj.CoreCompileInputs.cache
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\obj\Debug\2115101061_YasarCan.exe
+D:\other_csharp\2115101061_YasarCan\2115101061_YasarCan\obj\Debug\2115101061_YasarCan.pdb
