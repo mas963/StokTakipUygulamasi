@@ -158,5 +158,28 @@ namespace _2115101061_YasarCan
             conn.Close();
             lblUrunSayisi.Text = deger.ToString();
         }
+
+        void AramaYap()
+        {
+            if (txtArama.Text == "")
+            {
+                UrunleriGetir();
+            }
+            else
+            {
+                conn.Open();
+                adapter = new SqlDataAdapter("SELECT * FROM Urunler WHERE BarkodNo LIKE '%" + txtArama.Text + "%' OR UrunAdi LIKE '%" + txtArama.Text + "%'", conn);
+                DataTable tablo = new DataTable();
+                adapter.Fill(tablo);
+                dataGridView1.DataSource = tablo;
+                conn.Close();
+                dataGridView1.Columns["ResimUrl"].Visible = false;
+            }
+        }
+
+        private void txtArama_TextChanged(object sender, EventArgs e)
+        {
+            AramaYap();
+        }
     }
 }

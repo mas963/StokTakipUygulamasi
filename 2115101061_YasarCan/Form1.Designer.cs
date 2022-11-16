@@ -34,7 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblEskiBarkod = new System.Windows.Forms.Label();
             this.btnTemizle = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,7 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblEskiBarkod = new System.Windows.Forms.Label();
             this.txtKdvDahil = new System.Windows.Forms.TextBox();
             this.txtRaf = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,20 +62,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lblUrunSayisi = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtArama = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMagazaAdi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +148,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ürün Bilgisi";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(9, 147);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(215, 23);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "İşlem Yapılan Ürün Barkod:";
+            // 
+            // lblEskiBarkod
+            // 
+            this.lblEskiBarkod.AutoSize = true;
+            this.lblEskiBarkod.Location = new System.Drawing.Point(230, 147);
+            this.lblEskiBarkod.Name = "lblEskiBarkod";
+            this.lblEskiBarkod.Size = new System.Drawing.Size(16, 23);
+            this.lblEskiBarkod.TabIndex = 12;
+            this.lblEskiBarkod.Text = "-";
+            // 
             // btnTemizle
             // 
             this.btnTemizle.Location = new System.Drawing.Point(446, 24);
@@ -157,6 +175,16 @@
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.UseVisualStyleBackColor = true;
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::_2115101061_YasarCan.Properties.Resources.istockphoto_1216251206_170667a;
+            this.pictureBox2.Location = new System.Drawing.Point(392, 65);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(134, 143);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // btnSil
             // 
@@ -275,15 +303,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stok ve Fiyat Bilgisi";
             // 
-            // lblEskiBarkod
-            // 
-            this.lblEskiBarkod.AutoSize = true;
-            this.lblEskiBarkod.Location = new System.Drawing.Point(230, 147);
-            this.lblEskiBarkod.Name = "lblEskiBarkod";
-            this.lblEskiBarkod.Size = new System.Drawing.Size(16, 23);
-            this.lblEskiBarkod.TabIndex = 12;
-            this.lblEskiBarkod.Text = "-";
-            // 
             // txtKdvDahil
             // 
             this.txtKdvDahil.Enabled = false;
@@ -391,15 +410,6 @@
             this.lblUrunSayisi.TabIndex = 7;
             this.lblUrunSayisi.Text = "-";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 147);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(215, 23);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "İşlem Yapılan Ürün Barkod:";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -407,7 +417,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox6);
+            this.groupBox3.Controls.Add(this.txtArama);
             this.groupBox3.Font = new System.Drawing.Font("Calibri", 14.25F);
             this.groupBox3.Location = new System.Drawing.Point(12, 542);
             this.groupBox3.Name = "groupBox3";
@@ -425,12 +435,13 @@
             this.label17.TabIndex = 12;
             this.label17.Text = "Barkod veya Ürün Adı:";
             // 
-            // textBox6
+            // txtArama
             // 
-            this.textBox6.Location = new System.Drawing.Point(192, 32);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(127, 31);
-            this.textBox6.TabIndex = 16;
+            this.txtArama.Location = new System.Drawing.Point(192, 32);
+            this.txtArama.Name = "txtArama";
+            this.txtArama.Size = new System.Drawing.Size(127, 31);
+            this.txtArama.TabIndex = 16;
+            this.txtArama.TextChanged += new System.EventHandler(this.txtArama_TextChanged);
             // 
             // button3
             // 
@@ -441,16 +452,6 @@
             this.button3.Size = new System.Drawing.Size(75, 75);
             this.button3.TabIndex = 26;
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::_2115101061_YasarCan.Properties.Resources.istockphoto_1216251206_170667a;
-            this.pictureBox2.Location = new System.Drawing.Point(392, 65);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(134, 143);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -499,11 +500,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -549,7 +550,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtArama;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblMagazaAdi;
     }
