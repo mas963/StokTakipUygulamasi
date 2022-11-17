@@ -67,6 +67,7 @@
             this.txtArama = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMagazaAdi = new System.Windows.Forms.Label();
+            this.btnExcelRapor = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -452,12 +453,24 @@
             this.lblMagazaAdi.TabIndex = 27;
             this.lblMagazaAdi.Text = "-";
             // 
+            // btnExcelRapor
+            // 
+            this.btnExcelRapor.BackgroundImage = global::_2115101061_YasarCan.Properties.Resources.logo_microsoft_excel_1024;
+            this.btnExcelRapor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExcelRapor.Location = new System.Drawing.Point(458, 542);
+            this.btnExcelRapor.Name = "btnExcelRapor";
+            this.btnExcelRapor.Size = new System.Drawing.Size(80, 75);
+            this.btnExcelRapor.TabIndex = 28;
+            this.btnExcelRapor.UseVisualStyleBackColor = true;
+            this.btnExcelRapor.Click += new System.EventHandler(this.btnExcelRapor_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1240, 634);
+            this.Controls.Add(this.btnExcelRapor);
             this.Controls.Add(this.lblMagazaAdi);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.lblUrunSayisi);
@@ -529,6 +542,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtArama;
         private System.Windows.Forms.Label lblMagazaAdi;
+        private System.Windows.Forms.Button btnExcelRapor;
     }
 }
 

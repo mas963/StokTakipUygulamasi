@@ -81,7 +81,7 @@ namespace _2115101061_YasarCan
             cmd.Parameters.AddWithValue("@Birim", cbBirim.Text);
             cmd.Parameters.AddWithValue("@BirimFiyat", Convert.ToDouble(txtBirimFiyat.Text));
 
-            if (resimDegisti)
+            if (openFileDialog1.FileName.ToString() != "")
             {
                 cmd.Parameters.AddWithValue("@ResimUrl", openFileDialog1.FileName.ToString());
             }
@@ -226,6 +226,30 @@ namespace _2115101061_YasarCan
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        Microsoft.Office.Interop.Excel.Application uygulamaExcel = new Microsoft.Office.Interop.Excel.Application();
+        private void btnExcelRapor_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Workbook calismaKitabi = uygulamaExcel.Workbooks.Add(true);
+            Microsoft.Office.Interop.Excel.Worksheet calismaSayfasi = new Microsoft.Office.Interop.Excel.Worksheet();
+
+            uygulamaExcel.Visible = true;
+
+            calismaSayfasi = calismaKitabi.ActiveSheet;
+
+            for (int i = 1; i < dataGridView1.Columns.Count; i++)
+            {
+                calismaSayfasi.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+            }
+
+            for (int i = 1; i <= dataGridView1.Rows.Count; i++)
+            {
+                for (int j = 1; j <= dataGridView1.Columns.Count; j++)
+                {
+                    calismaSayfasi.Cells[i + 1, j] = dataGridView1.Rows[i - 1].Cells[j - 1].Value.ToString();
+                }
+            }
         }
     }
 }
