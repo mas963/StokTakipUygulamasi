@@ -54,15 +54,23 @@ namespace _2115101061_YasarCan
             txtStok.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
             cbBirim.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             txtBirimFiyat.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            lblEskiBarkod.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
             double kdvEkleme = Convert.ToDouble(txtBirimFiyat.Text) + Convert.ToDouble(txtBirimFiyat.Text) * 0.18;
             txtKdvDahil.Text = kdvEkleme.ToString();
             lblEskiBarkod.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+
+            try
+            {
+                pictureBox2.Image = Image.FromFile(dataGridView1.CurrentRow.Cells[8].Value.ToString());
+            }
+            catch
+            {
+                pictureBox2.ImageLocation = @"..\..\Resources\istockphoto-1216251206-170667a.jpg";
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = "INSERT INTO Urunler(BarkodNo,UrunAdi,Depo,Raf,Cinsi,Stok,Birim,BirimFiyat) VALUES (@BarkodNo,@UrunAdi,@Depo,@Raf,@Cinsi,@Stok,@Birim,@BirimFiyat)";
+            string query = "INSERT INTO Urunler(BarkodNo,UrunAdi,Depo,Raf,Cinsi,Stok,Birim,BirimFiyat, ResimUrl) VALUES (@BarkodNo,@UrunAdi,@Depo,@Raf,@Cinsi,@Stok,@Birim,@BirimFiyat,@ResimUrl)";
             cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@BarkodNo", Convert.ToInt32(txtBarkod.Text));
             cmd.Parameters.AddWithValue("@UrunAdi", txtUrunAdi.Text);
@@ -72,6 +80,12 @@ namespace _2115101061_YasarCan
             cmd.Parameters.AddWithValue("@Stok", Convert.ToInt32(txtStok.Text));
             cmd.Parameters.AddWithValue("@Birim", cbBirim.Text);
             cmd.Parameters.AddWithValue("@BirimFiyat", Convert.ToDouble(txtBirimFiyat.Text));
+
+            if (resimDegisti)
+            {
+                cmd.Parameters.AddWithValue("@ResimUrl", openFileDialog1.FileName.ToString());
+            }
+
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -106,7 +120,7 @@ namespace _2115101061_YasarCan
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE Urunler SET BarkodNo=@BarkodNo, UrunAdi=@UrunAdi, Depo=@Depo, Raf=@Raf, Cinsi=@Cinsi, Stok=@Stok, Birim=@Birim, BirimFiyat=@BirimFiyat WHERE BarkodNo=@EskiBarkodNo";
+            string query = "UPDATE Urunler SET BarkodNo=@BarkodNo, UrunAdi=@UrunAdi, Depo=@Depo, Raf=@Raf, Cinsi=@Cinsi, Stok=@Stok, Birim=@Birim, BirimFiyat=@BirimFiyat, ResimUrl=@ResimUrl WHERE BarkodNo=@EskiBarkodNo";
             cmd = new SqlCommand(query, conn);
             int eskiBarkod = Convert.ToInt32(lblEskiBarkod.Text);
             cmd.Parameters.AddWithValue("@BarkodNo", Convert.ToInt32(txtBarkod.Text));
@@ -118,6 +132,16 @@ namespace _2115101061_YasarCan
             cmd.Parameters.AddWithValue("@Stok", Convert.ToInt32(txtStok.Text));
             cmd.Parameters.AddWithValue("@Birim", cbBirim.Text);
             cmd.Parameters.AddWithValue("@BirimFiyat", Convert.ToDouble(txtBirimFiyat.Text));
+
+            if (resimDegisti)
+            {
+                cmd.Parameters.AddWithValue("@ResimUrl", openFileDialog1.FileName.ToString());
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@ResimUrl", dataGridView1.CurrentRow.Cells[8].Value.ToString());
+            }
+
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();
@@ -180,6 +204,28 @@ namespace _2115101061_YasarCan
         private void txtArama_TextChanged(object sender, EventArgs e)
         {
             AramaYap();
+        }
+
+        bool resimDegisti = false;
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            DialogResult sonuc;
+            sonuc = openFileDialog1.ShowDialog();
+
+            if (sonuc == DialogResult.OK)
+            {
+                pictureBox2.Image = Image.FromFile(openFileDialog1.FileName);
+                resimDegisti = true;
+            }
+            else
+            {
+                resimDegisti = false;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

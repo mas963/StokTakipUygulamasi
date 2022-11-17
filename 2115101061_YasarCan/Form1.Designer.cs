@@ -40,7 +40,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.txtUrunAdi = new System.Windows.Forms.TextBox();
             this.txtBarkod = new System.Windows.Forms.TextBox();
@@ -66,7 +65,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtArama = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblMagazaAdi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -132,7 +130,6 @@
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.btnSil);
             this.groupBox1.Controls.Add(this.btnGuncelle);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtUrunAdi);
             this.groupBox1.Controls.Add(this.txtBarkod);
@@ -185,11 +182,12 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // btnSil
             // 
             this.btnSil.ForeColor = System.Drawing.Color.Firebrick;
-            this.btnSil.Location = new System.Drawing.Point(325, 173);
+            this.btnSil.Location = new System.Drawing.Point(221, 173);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(61, 35);
             this.btnSil.TabIndex = 9;
@@ -199,22 +197,13 @@
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(221, 173);
+            this.btnGuncelle.Location = new System.Drawing.Point(117, 173);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(98, 35);
             this.btnGuncelle.TabIndex = 8;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.UseVisualStyleBackColor = true;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(117, 173);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 35);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Kaydet";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -443,16 +432,6 @@
             this.txtArama.TabIndex = 16;
             this.txtArama.TextChanged += new System.EventHandler(this.txtArama_TextChanged);
             // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::_2115101061_YasarCan.Properties.Resources.logo_microsoft_excel_1024;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(469, 542);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 75);
-            this.button3.TabIndex = 26;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::_2115101061_YasarCan.Properties.Resources.unnamed;
@@ -480,7 +459,6 @@
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1240, 634);
             this.Controls.Add(this.lblMagazaAdi);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.lblUrunSayisi);
             this.Controls.Add(this.groupBox2);
@@ -529,7 +507,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Button btnGuncelle;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtKdvDahil;
         private System.Windows.Forms.TextBox txtRaf;
@@ -551,7 +528,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtArama;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lblMagazaAdi;
     }
 }
